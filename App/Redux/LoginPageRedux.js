@@ -1,7 +1,7 @@
 import { createReducer, createActions } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-import { filter } from 'ramda'
-import { startsWith } from 'ramdasauce'
+// import { filter } from 'ramda'
+// import { startsWith } from 'ramdasauce'
 
 /* ------------- Types and Action Creators ------------- */
 
