@@ -7,8 +7,8 @@ import { startsWith } from 'ramdasauce'
 
 const { Types, Creators } = createActions({
   userLogin: ['username', 'password'],
-  userLoginSuccess: user,
-  userLoginError: error
+  userLoginSuccess: ['user'],
+  userLoginError: ['error']
 })
 
 export const LoginPageTypes = Types
@@ -24,16 +24,13 @@ export const INITIAL_STATE = Immutable({
 
 /* ------------- Reducers ------------- */
 
-export const performSearch = (state, { searchTerm }) => {
-  const results = filter(startsWith(searchTerm), LIST_DATA)
-  return state.merge({ searching: true, searchTerm, results })
-}
-
 export const login = (state) => state.merge({ loading: true, error: false });
 
-export const loginSuccess = (state, user) => {
+export const loginSuccess = (state, { user }) => {
   console.log(user, 'user >>>>');
-  return state.merge({ loading: false, error: false, user: user });
+  const test = state.merge({ loading: false, error: false, user });
+  console.log(test);
+  return test;
 }
 
 export const loginError = (state, error) => {

@@ -13,37 +13,53 @@ import { Container,
   Text,
   Input
 } from 'native-base';
+import { connect } from 'react-redux'
 
 import LoginPageActions, { LoginPageSelectors } from '../Redux/LoginPageRedux';
 
 export class LoginPage extends Component {
   constructor() {
     super();
-    console.log('>>>>>>>>>>>');
     this.state = {
       userName: '',
       password: '',
     };
   }
 
-  onInputUserNameChange = e =>
+  componentDidMount() {
+    if (this.props.user && this.props.user.role) {
+      console.log(this.props.user.role);
+      this.props.navigation.navigate(`${this.props.user.role}Page`);
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.user && this.props.user.role) {
+      console.log(this.props.user.role);
+      this.props.navigation.navigate(`${this.props.user.role}Page`);
+    }
+  }
+
+  onInputUserNameChange = e => {
+    console.log(e);
     this.setState({
-      userName: e.target.value,
+      userName: e,
     });
+  }
 
   onInputPasswordChange = e =>
     this.setState({
-      password: e.target.value,
+      password: e,
     });
 
   onLoginButtonClick = () => {
     console.log(this.state.userName, this.state.password);
-    console.log(this.props.login);
+    // console.log(this.props.login);
     this.props.login(this.state.userName, this.state.password);
   };
 
   render() {
-    console.log('user', this.props.user);
+    console.log(this.props.user);
     return (
       <Container>
         <Header>
@@ -64,12 +80,22 @@ export class LoginPage extends Component {
           <Text>
             Username
           </Text>
-          <Input placeholder='Username'/>
+          <Input
+            placeholder='Username'
+            value={this.state.userName}
+            onChangeText={this.onInputUserNameChange}
+          />
           <Text>
             Password
           </Text>
-          <Input placeholder='Password' type="password"/>
-          <Button onClick={this.onLoginButtonClick}>
+          <Input
+            secureTextEntry
+            placeholder='Password'
+            type="password"
+            value={this.state.password}
+            onChangeText={this.onInputPasswordChange}
+          />
+          <Button onPress={this.onLoginButtonClick}>
             <Text>Login</Text>
           </Button>
         </Content>
@@ -85,10 +111,10 @@ export class LoginPage extends Component {
   }
 }
 
-// const mapStateToProps = state => ({ user: LoginPageSelectors.selectUser(state) })
+const mapStateToProps = state => ({ user: LoginPageSelectors.selectUser(state) })
 
 const mapDispatchToProps = (dispatch) => ({
   login: (username, password) => dispatch(LoginPageActions.userLogin(username, password))
 })
 
-export default connect(null, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
