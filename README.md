@@ -17,6 +17,8 @@
 1. cd to the repo
 2. Run Build for either OS
   * for iOS
+    * install third party for some reasons: `cd node_modules/react-native/ && ./scripts/ios-install-third-party.sh`
+    * https://github.com/facebook/react-native/issues/19569
     * run `react-native run-ios`
   * for Android
     * Run Genymotion
