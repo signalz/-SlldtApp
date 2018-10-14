@@ -329,7 +329,7 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
-		E441A08921734DDE00C110C4 /* PBXContainerItemProxy */ = {
+		E441A0C2217354B300C110C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 158037DE6DCD4484A5002271 /* ReactNativeConfig.xcodeproj */;
 			proxyType = 2;
@@ -619,7 +619,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				89B69CFE50604865AA31099B /* Resources */,
-				E441A06021734DDC00C110C4 /* Recovered References */,
+				E441A099217354B200C110C4 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -667,7 +667,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E441A06021734DDC00C110C4 /* Recovered References */ = {
+		E441A099217354B200C110C4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				7428DEFEB4A9441C9FDDFFFF /* libReactNativeConfig.a */,
@@ -675,10 +675,10 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		E441A08621734DDE00C110C4 /* Products */ = {
+		E441A0BF217354B300C110C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E441A08A21734DDE00C110C4 /* libReactNativeConfig.a */,
+				E441A0C3217354B300C110C4 /* libReactNativeConfig.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -843,7 +843,7 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = E441A08621734DDE00C110C4 /* Products */;
+					ProductGroup = E441A0BF217354B300C110C4 /* Products */;
 					ProjectRef = 158037DE6DCD4484A5002271 /* ReactNativeConfig.xcodeproj */;
 				},
 			);
@@ -1117,11 +1117,11 @@
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E441A08A21734DDE00C110C4 /* libReactNativeConfig.a */ = {
+		E441A0C3217354B300C110C4 /* libReactNativeConfig.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libReactNativeConfig.a;
-			remoteRef = E441A08921734DDE00C110C4 /* PBXContainerItemProxy */;
+			remoteRef = E441A0C2217354B300C110C4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
