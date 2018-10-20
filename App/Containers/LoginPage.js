@@ -16,6 +16,7 @@ import { Container,
 import { connect } from 'react-redux'
 
 import LoginPageActions, { LoginPageSelectors } from '../Redux/LoginPageRedux';
+import i18n from '../Translations';
 
 export class LoginPage extends Component {
   constructor() {
@@ -96,7 +97,7 @@ export class LoginPage extends Component {
             onChangeText={this.onInputPasswordChange}
           />
           <Button onPress={this.onLoginButtonClick}>
-            <Text>Login</Text>
+            <Text>{i18n.t('LoginPage.loginButton', { language: i18n.currentLocale() })}</Text>
           </Button>
         </Content>
         <Footer>
